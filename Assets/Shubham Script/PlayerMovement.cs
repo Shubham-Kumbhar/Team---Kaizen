@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
- 
 
+    [SerializeField] float speedX;
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(Vector2.left);
+            transform.Translate(Vector2.left* speedX);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Translate(Vector2.right);
+            transform.Translate(Vector2.right*speedX);
         }
     }
 }
