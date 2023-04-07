@@ -10,7 +10,7 @@ public class Meteor: MonoBehaviour
     public float damage;
     public float probability;
     private Rigidbody rb;
-    private float health=3f;
+    private float health=1f;
     private ScoreManager scoreManager;
 
 
@@ -48,7 +48,7 @@ public class Meteor: MonoBehaviour
             default: break;
         }
     }
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.CompareTag("bullet"))
         health--;
@@ -57,12 +57,13 @@ public class Meteor: MonoBehaviour
         other.gameObject.GetComponent<PlayerHealth>().noOfLives--;
         other.gameObject.GetComponent<PlayerHealth>().liveHearts[other.gameObject.GetComponent<PlayerHealth>().noOfLives-1].SetActive(false);
         }
+        Debug.Log("SJDAI");
     }
     void DestroyMeteor()
     {
         //animPlay
         //soundPlay
-        //Destroy
+        Destroy(this.gameObject);
     }
     void ScoreAdd()
     {
