@@ -5,6 +5,7 @@ using System.Collections;
 public class Meteor: MonoBehaviour
 {
     private string tag;
+    [SerializeField]private float speed;
     private GameObject player;
     public float damage;
     private Rigidbody rb;
@@ -18,17 +19,19 @@ public class Meteor: MonoBehaviour
         scoreManager=FindObjectOfType<ScoreManager>();
         player=GameObject.FindWithTag("Player");
         rb=GetComponent<Rigidbody>();
+        Destroy(this.gameObject,3f);
     }
     void Update()
     {
         if(health<=0f)
         ScoreAdd();
-        DodgeMeteor();
-        //Movement();
+        //DodgeMeteor();
+        Movement();
+        
     }
     void Movement()
     {
-        transform.Translate(new Vector3(0,-1,0));
+        transform.Translate(Vector2.down*speed);
     }
     void Classify()
     {
@@ -62,4 +65,5 @@ public class Meteor: MonoBehaviour
         if(this.transform.position.y<=player.transform.position.y)
         scoreManager.score+=5f;
     }
+
 }
