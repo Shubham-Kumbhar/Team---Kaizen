@@ -12,7 +12,6 @@ public class LaserShooting: MonoBehaviour
     }
     void Update()
     {
-        if(scoreManager.DistTravelled>=300f)
         Invoke("SpawnBullets",5f);
         
     }

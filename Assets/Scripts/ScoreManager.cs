@@ -20,16 +20,13 @@ public class ScoreManager: MonoBehaviour
       void Update()
       {
         DistTravelled++;
-        text.text=(DistTravelled*10f).ToString();
+        text.text=score.ToString();
         if(Health<=0) 
             noOfLives--;
         
         if(noOfLives==0)
         SceneManager.LoadScene("GameOver");
       }
-      // private void OnCollisionEnter(Collision other) {
-      //   meteor=other.GetComponent<Meteor>();
-      //   health-=meteor.damage;
       
 
 }

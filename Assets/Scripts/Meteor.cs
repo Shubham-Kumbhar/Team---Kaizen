@@ -7,6 +7,7 @@ public class Meteor: MonoBehaviour
     private string tag;
     private GameObject player;
     public float damage;
+    private Rigidbody rb;
     private float health=3f;
     private ScoreManager scoreManager;
 
@@ -16,12 +17,18 @@ public class Meteor: MonoBehaviour
         tag=this.gameObject.tag;    
         scoreManager=FindObjectOfType<ScoreManager>();
         player=GameObject.FindWithTag("Player");
+        rb=GetComponent<Rigidbody>();
     }
     void Update()
     {
         if(health<=0f)
         ScoreAdd();
         DodgeMeteor();
+        Movement();
+    }
+    void Movement()
+    {
+        transform.Translate(new Vector3(0,-1,0));
     }
     void Classify()
     {
@@ -37,6 +44,8 @@ public class Meteor: MonoBehaviour
     {
         if(other.gameObject.CompareTag("Bullet"))
         health--;
+        if(other.gameObject.CompareTag("Player"))
+        Destroy(this);
     }
     void ScoreAdd()
     {
