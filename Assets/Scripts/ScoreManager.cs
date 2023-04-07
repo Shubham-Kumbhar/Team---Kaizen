@@ -10,12 +10,13 @@ public class ScoreManager: MonoBehaviour
     public float DistTravelled;
     private Meteor meteor;
     [SerializeField]private int noOfLives=3;
+    private MeteorSpawner ms;
     
     [SerializeField]private float Health=100f;
 
       void Start()
       {
-
+        ms=FindObjectOfType<MeteorSpawner>();
       }
       void Update()
       {
@@ -26,6 +27,12 @@ public class ScoreManager: MonoBehaviour
         
         if(noOfLives==0)
         SceneManager.LoadScene("GameOver");
+      }
+      void Difficulty()
+      {
+        if(DistTravelled>=100)
+        ms.spawnInterval=1.5f;
+        
       }
       
 

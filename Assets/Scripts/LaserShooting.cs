@@ -12,17 +12,16 @@ public class LaserShooting: MonoBehaviour
     }
     void Update()
     {
-        Invoke("SpawnBullets",5f);
+       
         
     }
     void SpawnBullets()
     {
-        GameObject gb=Instantiate(bullet,this.transform.position,this.transform.rotation);
-        gb.GetComponent<Rigidbody>().AddForce(this.transform.forward*ForceMagnitude,ForceMode.Impulse);
+        
     }
     void SpreadBullets()
     {
-        GameObject gb=Instantiate(bullet,this.transform.position,this.transform.rotation);
+       
     }
     
 }
