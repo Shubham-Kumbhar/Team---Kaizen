@@ -28,5 +28,14 @@ public class MeteorSpawner: MonoBehaviour
         Instantiate(meteors[y],x, spawnPoint1.rotation);
         isSpawned=true;
     }
+    // GameObject ProbabilityDecider()
+    // {
+    //     for(int i=0;i<meteors.Length-1;i++)
+    //     {
+    //         Meteor m=GameObject[i].GetComponent<Meteor>();
+    //         Meteor m2=GameObject[i+1].GetComponent<Meteor>();
+    //         if(m.probability> )
+    //     }
+    
 
 }

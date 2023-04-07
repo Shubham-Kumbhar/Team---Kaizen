@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class ScoreManager: MonoBehaviour
 {
     [SerializeField]private Text text;
+    [SerializeField]private GameObject spawner1;
+    [SerializeField]private GameObject spawner2;
     public float score;
     public float DistTravelled;
     private Meteor meteor;
@@ -32,7 +34,12 @@ public class ScoreManager: MonoBehaviour
       {
         if(DistTravelled>=100)
         ms.spawnInterval=1.5f;
-        
+        else if(DistTravelled>=200)
+        spawner1.SetActive(true);
+        else if(DistTravelled>=300)
+        spawner2.SetActive(true);
+
+
       }
       
 

@@ -8,6 +8,7 @@ public class Meteor: MonoBehaviour
     [SerializeField]private float speed;
     private GameObject player;
     public float damage;
+    [SerializeField]private float probability;
     private Rigidbody rb;
     private float health=3f;
     private ScoreManager scoreManager;
@@ -37,9 +38,9 @@ public class Meteor: MonoBehaviour
     {
         switch(tag)
         {
-            case "Small": damage=10f; health=1f; break;
-            case "Mid": damage=20f; health=1f;break;
-            case "Big": damage=30f; health=3f;break;
+            case "Small": damage=10f; health=1f;probability=0.5f; break;
+            case "Mid": damage=20f; health=1f;probability=0.4f; break;
+            case "Big": damage=30f; health=3f;probability=0.1f;break;
             default: break;
         }
     }
