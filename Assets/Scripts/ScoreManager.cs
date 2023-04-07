@@ -9,7 +9,7 @@ public class ScoreManager: MonoBehaviour
     [SerializeField]private GameObject spawner1;
     [SerializeField]private GameObject spawner2;
     public float score;
-    public float DistTravelled;
+    public float DistTravelled=0f;
     private Meteor meteor;
     [SerializeField]private int noOfLives=3;
     private MeteorSpawner ms;
@@ -22,8 +22,9 @@ public class ScoreManager: MonoBehaviour
       }
       void Update()
       {
-        DistTravelled++;
+        DistTravelled+=0.05f;
         text.text=score.ToString();
+        Difficulty();
         if(Health<=0) 
             noOfLives--;
         

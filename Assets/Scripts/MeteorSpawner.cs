@@ -25,15 +25,16 @@ public class MeteorSpawner: MonoBehaviour
     IEnumerator SpawnMeteors()
     {
         yield return new WaitForSeconds(spawnInterval);
+        int y=0;
         Vector3 x=new Vector3(Random.Range(spawnPoint1.position.x,spawnPoint2.position.x),Random.Range(spawnPoint1.position.y,spawnPoint2.position.y),Random.Range(spawnPoint1.position.z,spawnPoint2.position.z));
         if(sm.DistTravelled<=100)
-        int y=Random.Range(0,meteors.Length-1);
+        y=Random.Range(0,meteors.Length-1);
         else if(sm.DistTravelled<=200)
-        int y=Random.Range(0,meteors.Length);
+        y=Random.Range(0,meteors.Length);
         else if(sm.DistTravelled<=350)
-        int y=Random.Range(1,meteors.Length);
+        y=Random.Range(1,meteors.Length);
         else
-        int y=meteors.Length-1;
+        y=meteors.Length-1;
         Instantiate(meteors[y],x, spawnPoint1.rotation);
         isSpawned=true;
     }
