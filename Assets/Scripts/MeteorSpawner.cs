@@ -9,8 +9,10 @@ public class MeteorSpawner: MonoBehaviour
     public float spawnInterval=3f;
     [SerializeField]private Transform spawnPoint1;
     [SerializeField]private Transform spawnPoint2;
+    private ScoreManager sm;
     void Start()
     {
+        sm=FindObjectOfType<ScoreManager>();
     }
     void Update()
     {
@@ -24,18 +26,26 @@ public class MeteorSpawner: MonoBehaviour
     {
         yield return new WaitForSeconds(spawnInterval);
         Vector3 x=new Vector3(Random.Range(spawnPoint1.position.x,spawnPoint2.position.x),Random.Range(spawnPoint1.position.y,spawnPoint2.position.y),Random.Range(spawnPoint1.position.z,spawnPoint2.position.z));
+        if(sm.DistTravelled<=100)
+        int y=Random.Range(0,meteors.Length-1);
+        else if(sm.DistTravelled<=200)
         int y=Random.Range(0,meteors.Length);
+        else if(sm.DistTravelled<=350)
+        int y=Random.Range(1,meteors.Length);
+        else
+        int y=meteors.Length-1;
         Instantiate(meteors[y],x, spawnPoint1.rotation);
         isSpawned=true;
     }
-    // GameObject ProbabilityDecider()
-    // {
-    //     for(int i=0;i<meteors.Length-1;i++)
-    //     {
-    //         Meteor m=GameObject[i].GetComponent<Meteor>();
-    //         Meteor m2=GameObject[i+1].GetComponent<Meteor>();
-    //         if(m.probability> )
-    //     }
-    
+    GameObject ProbabilityDecider()
+    {
+        for(int i=0;i<meteors.Length-1;i++)
+        {
+            Meteor m=meteors[i].GetComponent<Meteor>();
+            if(m.probability>=0.5f)
+            return m.gameObject;
+        }
+        return null;
+    }
 
 }

@@ -8,7 +8,7 @@ public class Meteor: MonoBehaviour
     [SerializeField]private float speed;
     private GameObject player;
     public float damage;
-    [SerializeField]private float probability;
+    public float probability;
     private Rigidbody rb;
     private float health=3f;
     private ScoreManager scoreManager;
