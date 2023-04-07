@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ScoreManager: Monobehaviour
 {
     [SerializeField]private Text text;
+    public float score;
     public float DistTravelled;
     private Meteor meteor;
     [SerializeField]private int noOfLives=3;
@@ -26,9 +27,9 @@ public class ScoreManager: Monobehaviour
         if(noOfLives=0)
         SceneManager.LoadScene("GameOver");
       }
-      private void OnCollisionEnter(Collision other) {
-        meteor=other.GetComponent<Meteor>();
-        health-=meteor.damage;
-      }
+      // private void OnCollisionEnter(Collision other) {
+      //   meteor=other.GetComponent<Meteor>();
+      //   health-=meteor.damage;
+      
 
 }

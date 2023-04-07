@@ -23,10 +23,7 @@ public class LaserShooting: MonoBehaviour
     }
     void SpreadBullets()
     {
-        GameObject gb=Instantiate(bullet,this.transform.position,)
+        GameObject gb=Instantiate(bullet,this.transform.position);
     }
-    void ForceField()
-    {
-
-    }
+    
 }

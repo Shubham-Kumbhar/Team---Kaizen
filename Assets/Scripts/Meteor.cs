@@ -7,16 +7,18 @@ public class Meteor: MonoBehaviour
     private string tag;
     public float damage;
     private float health=3f;
+    private ScoreManager scoreManager;
 
 
     void Start()
     {
         tag=this.gameObject.tag;    
+        scoreManager=FindObjectOfType<ScoreManager>();
     }
     void Update()
     {
         if(health<=0f)
-        Destroy(this);
+        ScoreAdd();
     }
     void Classify()
     {
@@ -32,5 +34,15 @@ public class Meteor: MonoBehaviour
     {
         if(other.gameObject.CompareTag("Bullet"))
         health--;
+    }
+    void ScoreAdd()
+    {
+        switch(tag)
+        {
+            case "Small": scoreManager.score+=10f; break;
+            case "Mid": scoreManager.score+=10f; break;
+            case "Big": scoreManager.score+=20f; break;
+            default: break;
+        }
     }
 }
