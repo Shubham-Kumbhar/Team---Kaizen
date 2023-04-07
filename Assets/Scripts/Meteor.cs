@@ -9,7 +9,6 @@ public class Meteor: MonoBehaviour
     private GameObject player;
     public float damage;
     public float probability;
-    private Rigidbody rb;
     private float health=1f;
     private ScoreManager scoreManager;
 
@@ -20,7 +19,6 @@ public class Meteor: MonoBehaviour
         tag=this.gameObject.tag;    
         scoreManager=FindObjectOfType<ScoreManager>();
         player=GameObject.FindWithTag("Player");
-        rb=GetComponent<Rigidbody>();
         Classify();
         Destroy(this.gameObject,7f);
     }

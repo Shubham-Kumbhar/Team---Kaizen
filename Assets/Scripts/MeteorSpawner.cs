@@ -19,8 +19,9 @@ public class MeteorSpawner: MonoBehaviour
         if(isSpawned)
         {
             isSpawned=false;
-        StartCoroutine(SpawnMeteors());
-    }}
+            StartCoroutine(SpawnMeteors());
+        }
+    }
     IEnumerator SpawnMeteors()
     {
         yield return new WaitForSeconds(spawnInterval);
