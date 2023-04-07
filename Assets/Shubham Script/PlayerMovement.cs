@@ -15,9 +15,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void shoot(int j)
     {
-        for(int i=0;i<transform.childCount;i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            if(i==j)
+            if (i == j)
             {
                 transform.GetChild(i).gameObject.SetActive(true);
             }
