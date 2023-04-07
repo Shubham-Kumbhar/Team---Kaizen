@@ -24,7 +24,7 @@ public class Meteor: MonoBehaviour
         if(health<=0f)
         ScoreAdd();
         DodgeMeteor();
-        Movement();
+        //Movement();
     }
     void Movement()
     {
@@ -42,7 +42,7 @@ public class Meteor: MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Bullet"))
+        if(other.gameObject.CompareTag("bullet"))
         health--;
         if(other.gameObject.CompareTag("Player"))
         Destroy(this);
