@@ -5,6 +5,7 @@ using System.Collections;
 public class Meteor: MonoBehaviour
 {
     private string tag;
+    private GameObject player;
     public float damage;
     private float health=3f;
     private ScoreManager scoreManager;
@@ -14,11 +15,13 @@ public class Meteor: MonoBehaviour
     {
         tag=this.gameObject.tag;    
         scoreManager=FindObjectOfType<ScoreManager>();
+        player=GameObject.FindWithTag("Player");
     }
     void Update()
     {
         if(health<=0f)
         ScoreAdd();
+        DodgeMeteor();
     }
     void Classify()
     {
@@ -47,6 +50,7 @@ public class Meteor: MonoBehaviour
     }
     void DodgeMeteor()
     {
-        
+        if(this.transform.position.y<=player.transform.position.y)
+        scoreManager.score+=5f;
     }
 }
