@@ -10,7 +10,7 @@ public class ScoreManager: MonoBehaviour
     public float DistTravelled;
     private Meteor meteor;
     [SerializeField]private int noOfLives=3;
-    //[SerializeField]private bool IsAlive=true;
+    
     [SerializeField]private float Health=100f;
 
       void Start()
@@ -22,9 +22,9 @@ public class ScoreManager: MonoBehaviour
         DistTravelled++;
         text.text=(DistTravelled*10f).ToString();
         if(Health<=0) 
-            noOFLives--;
+            noOfLives--;
         
-        if(noOfLives=0)
+        if(noOfLives==0)
         SceneManager.LoadScene("GameOver");
       }
       // private void OnCollisionEnter(Collision other) {
