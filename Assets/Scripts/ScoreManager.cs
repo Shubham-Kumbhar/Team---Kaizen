@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ScoreManager: Monobehaviour
+public class ScoreManager: MonoBehaviour
 {
     [SerializeField]private Text text;
     public float score;

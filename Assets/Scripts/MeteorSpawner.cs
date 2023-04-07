@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MeteorSpawner: Monobehaviour
+public class MeteorSpawner: MonoBehaviour
 {
     [SerializeField]private GameObject[] meteors;
     [SerializeField]private Transform spawnPoint;

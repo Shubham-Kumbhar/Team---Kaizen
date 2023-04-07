@@ -45,4 +45,8 @@ public class Meteor: MonoBehaviour
             default: break;
         }
     }
+    void DodgeMeteor()
+    {
+        
+    }
 }
