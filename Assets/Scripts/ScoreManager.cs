@@ -13,6 +13,7 @@ public class ScoreManager: MonoBehaviour
     private Meteor meteor;
     [SerializeField]private int noOfLives=3;
     private MeteorSpawner ms;
+    private float dt;
     
     [SerializeField]private float Health=100f;
 
@@ -23,7 +24,8 @@ public class ScoreManager: MonoBehaviour
       void Update()
       {
         DistTravelled+=0.05f;
-        text.text=score.ToString();
+        dt=DistTravelled;
+        //text.text=score.ToString();
         Difficulty();
         if(Health<=0) 
             noOfLives--;
@@ -33,15 +35,29 @@ public class ScoreManager: MonoBehaviour
       }
       void Difficulty()
       {
-        if(DistTravelled>=100)
-        ms.spawnInterval=1.5f;
-        else if(DistTravelled>=200)
+        if(DistTravelled>=100 && DistTravelled<=200)
+        ms.spawnInterval=1.75f;
+        
+        if(DistTravelled>200 && DistTravelled<=300){
         spawner1.SetActive(true);
-        else if(DistTravelled>=300)
+        ms.spawnInterval=1.5f;}
+        if(DistTravelled>300){
         spawner2.SetActive(true);
-
-
+        ms.spawnInterval=1.25f;
+        }
       }
-      
+      void SpawnAbilities()
+      {
+        if(dt==100)
+        SpawnA1();
+        if(dt==200)
+        SpawnA2();
+        if(dt==300)
+        SpawnA3();
+        if(dt==400){
+        SpawnA4();
+        dt-=400f;
+      }
+      }
 
 }

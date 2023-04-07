@@ -20,7 +20,7 @@ public class Meteor: MonoBehaviour
         scoreManager=FindObjectOfType<ScoreManager>();
         player=GameObject.FindWithTag("Player");
         rb=GetComponent<Rigidbody>();
-        Destroy(this.gameObject,3f);
+        Destroy(this.gameObject,7f);
     }
     void Update()
     {
