@@ -10,7 +10,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         transform.position = new Vector2(joyStick.value*speedX, yPos);
+    }
+
+    public void shoot(int j)
+    {
+        for(int i=0;i<transform.childCount;i++)
+        {
+            if(i==j)
+            {
+                transform.GetChild(i).gameObject.SetActive(true);
+            }
+            else
+            {
+                transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
     }
 }
