@@ -57,7 +57,7 @@ public class Meteor: MonoBehaviour
         other.gameObject.GetComponent<PlayerHealth>().noOfLives--;
         other.gameObject.GetComponent<PlayerHealth>().liveHearts[other.gameObject.GetComponent<PlayerHealth>().noOfLives-1].SetActive(false);
         }
-        Debug.Log("SJDAI");
+        //Debug.Log("SJDAI");
     }
     void DestroyMeteor()
     {
@@ -74,6 +74,7 @@ public class Meteor: MonoBehaviour
             case "Big": scoreManager.score+=20f; break;
             default: break;
         }
+        scoreManager.score+=69f;
     }
     void DodgeMeteor()
     {
