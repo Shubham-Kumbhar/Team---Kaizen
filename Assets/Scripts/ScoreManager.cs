@@ -8,6 +8,7 @@ public class ScoreManager: MonoBehaviour
     [SerializeField]private Text text;
     [SerializeField]private GameObject spawner1;
     [SerializeField]private GameObject spawner2;
+    [SerializeField]private GameObject[] abilitiesIcon;
     public float score;
     public float DistTravelled=0f;
     private Meteor meteor;
@@ -25,6 +26,7 @@ public class ScoreManager: MonoBehaviour
       {
         DistTravelled+=0.05f;
         dt=DistTravelled;
+        SpawnAbilities();
         //text.text=score.ToString();
         Difficulty();
         if(Health<=0) 
@@ -48,16 +50,10 @@ public class ScoreManager: MonoBehaviour
       }
       void SpawnAbilities()
       {
-        if(dt==100)
-        SpawnA1();
-        if(dt==200)
-        SpawnA2();
-        if(dt==300)
-        SpawnA3();
-        if(dt==400){
-        SpawnA4();
-        dt-=400f;
+        Vector3 x1=Camera.main.ViewportToWorldPoint(new Vector3(0,1,0));
+        Vector3 x2=Camera.main.ViewportToWorldPoint(new Vector3(1,1,0));
+        if(dt%100==0)
+        Instantiate(abilitiesIcon[Random.Range(0,abilitiesIcon.Length-1)],new Vector3(Random.Range(x1.x,x2.x),5.08f), Quaternion.identity);
       }
       }
 
-}

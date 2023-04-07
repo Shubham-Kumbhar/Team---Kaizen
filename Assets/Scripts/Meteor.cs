@@ -24,8 +24,10 @@ public class Meteor: MonoBehaviour
     }
     void Update()
     {
-        if(health<=0f)
+        if(health<=0f){
         ScoreAdd();
+        DestroyMeteor();
+        }
         //DodgeMeteor();
         Movement();
         
@@ -50,6 +52,12 @@ public class Meteor: MonoBehaviour
         health--;
         if(other.gameObject.CompareTag("Player"))
         Destroy(this);
+    }
+    void DestroyMeteor()
+    {
+        //animPlay
+        //soundPlay
+        //Destroy
     }
     void ScoreAdd()
     {
