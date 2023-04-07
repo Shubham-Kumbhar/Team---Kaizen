@@ -12,11 +12,10 @@ public class ScoreManager: MonoBehaviour
     public float score;
     public float DistTravelled=0f;
     private Meteor meteor;
-    [SerializeField]private int noOfLives=3;
+    
     private MeteorSpawner ms;
     private float dt;
     
-    [SerializeField]private float Health=100f;
 
       void Start()
       {
@@ -28,12 +27,8 @@ public class ScoreManager: MonoBehaviour
         dt=DistTravelled;
         SpawnAbilities();
         //text.text=score.ToString();
-        Difficulty();
-        if(Health<=0) 
-            noOfLives--;
+        Difficulty();       
         
-        if(noOfLives==0)
-        SceneManager.LoadScene("GameOver");
       }
       void Difficulty()
       {
