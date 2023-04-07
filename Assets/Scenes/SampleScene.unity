@@ -452,7 +452,6 @@ GameObject:
   - component: {fileID: 596149636}
   - component: {fileID: 596149635}
   - component: {fileID: 596149637}
-  - component: {fileID: 596149638}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -545,20 +544,6 @@ MonoBehaviour:
   speedX: 2
   yPos: -2.2
   joyStick: {fileID: 1214754002}
---- !u!136 &596149638
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596149634}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.21133333, z: 0}
 --- !u!1 &602503446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1231262866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1141,7 +1126,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -1149,14 +1134,23 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.02248764
+        value: 0.46017647
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.07080078
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
