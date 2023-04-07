@@ -1,21 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
 
-    [SerializeField] float speedX;
+    [SerializeField] float speedX,yPos;
+    [SerializeField] Slider joyStick;
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(Vector2.left* speedX);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(Vector2.right*speedX);
-        }
+
+        transform.position = new Vector2(joyStick.value*speedX, yPos);
     }
 }
