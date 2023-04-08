@@ -16,8 +16,8 @@ public class PlayerHealth : MonoBehaviour
             this.gameObject.SetActive(false);
             Instantiate(destroyShipAnim, this.transform.position, Quaternion.identity);
 
-            //Time.timeScale = 0;
-            //SceneManager.LoadScene("GameOver");
+            Time.timeScale = 0;
+            SceneManager.LoadScene("GameOver");
         } 
        
     }
