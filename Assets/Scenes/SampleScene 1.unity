@@ -2036,8 +2036,8 @@ MonoBehaviour:
   bullet3: {fileID: 6680746197384782549, guid: 196357c441d9e4d458cb425fe318cf7b, type: 3}
   poolMetoroidAmount: 15
   Metoroid1: {fileID: 5890307830184107253, guid: b614f4a7c7bd19d47832cc5bb0da77df, type: 3}
-  Metoroid2: {fileID: 5890307830184107253, guid: 3b45bb77fe09c3941bd8ce1b3b9a6a7a, type: 3}
-  Metoroid3: {fileID: 5890307830184107253, guid: 4591bd1e1dcfb5c4f8c443258913ea80, type: 3}
+  Metoroid2: {fileID: 5890307830184107253, guid: b614f4a7c7bd19d47832cc5bb0da77df, type: 3}
+  Metoroid3: {fileID: 5890307830184107253, guid: b614f4a7c7bd19d47832cc5bb0da77df, type: 3}
 --- !u!4 &1357572237
 Transform:
   m_ObjectHideFlags: 0

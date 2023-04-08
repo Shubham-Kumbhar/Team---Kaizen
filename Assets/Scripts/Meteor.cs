@@ -16,7 +16,10 @@ public class Meteor: MonoBehaviour
 
     private void OnEnable()
     {
+        if(!this.gameObject.CompareTag("Big"))
         health = 1f;
+        else
+        health=3f;
     }
     void Start()
     {
