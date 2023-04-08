@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6272001738916265745}
   - component: {fileID: 5873289785417187818}
+  - component: {fileID: -1642720744272478188}
   m_Layer: 0
   m_Name: Meterite (med)
   m_TagString: Untagged
@@ -84,3 +85,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1642720744272478188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923794052584167196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d54f23ab21ea64ea4c83e8def4306f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.0075
+  deadHeart: {fileID: 21300000, guid: c0d50599ffd329c42843312cf66a1501, type: 3}
+  destroyAnim: {fileID: 7384549474630038317, guid: c1c0af1730a32914f88c951c16ff674b, type: 3}
+  damage: 0
+  probability: 0
+  health: 1

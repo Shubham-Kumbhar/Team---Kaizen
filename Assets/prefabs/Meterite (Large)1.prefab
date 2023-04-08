@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.0075
   deadHeart: {fileID: 21300000, guid: c0d50599ffd329c42843312cf66a1501, type: 3}
+  destroyAnim: {fileID: 7384549474630038317, guid: c1c0af1730a32914f88c951c16ff674b, type: 3}
   damage: 0
   probability: 0
   health: 3

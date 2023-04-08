@@ -7,6 +7,7 @@ public class Meteor: MonoBehaviour
     private string tag;
     [SerializeField]private float speed;
     [SerializeField]private Sprite deadHeart;
+    [SerializeField]private GameObject destroyAnim;
     private GameObject player;
     public float damage;
     public float probability;
@@ -71,7 +72,7 @@ public class Meteor: MonoBehaviour
     }
     void DestroyMeteor()
     {
-        //animPlay
+        Instantiate(destroyAnim, this.transform.position, Quaternion.identity);
         //soundPlay
         gameObject.SetActive(false);
         //Destroy(this.gameObject);
