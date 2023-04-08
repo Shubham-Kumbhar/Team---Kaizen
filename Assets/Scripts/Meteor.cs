@@ -20,7 +20,8 @@ public class Meteor: MonoBehaviour
         scoreManager=FindObjectOfType<ScoreManager>();
         player=GameObject.FindWithTag("Player");
         Classify();
-        Destroy(this.gameObject,7f);
+        Invoke("DestroyMeteor", 5f);
+        //Destroy(this.gameObject,7f);
     }
     void Update()
     {
@@ -51,7 +52,8 @@ public class Meteor: MonoBehaviour
         if(other.gameObject.CompareTag("bullet"))
         health--;
         if(other.gameObject.CompareTag("Player")){
-        Destroy(this);
+        gameObject.SetActive(false);
+       // Destroy(this);
         other.gameObject.GetComponent<PlayerHealth>().noOfLives--;
         other.gameObject.GetComponent<PlayerHealth>().liveHearts[other.gameObject.GetComponent<PlayerHealth>().noOfLives-1].SetActive(false);
         }
@@ -61,7 +63,8 @@ public class Meteor: MonoBehaviour
     {
         //animPlay
         //soundPlay
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
+        //Destroy(this.gameObject);
     }
     void ScoreAdd()
     {

@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    [SerializeField] float speed; 
-    // Update is called once per frame
+    [SerializeField] float speed;
     void Update()
     {
         transform.Translate(Vector2.up* speed);
+    }
+
+    void setActiveFalse()
+    {
+        gameObject.SetActive(false);
     }
 }

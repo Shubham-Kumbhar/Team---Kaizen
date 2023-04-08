@@ -7,11 +7,13 @@ public class MeteorSpawner: MonoBehaviour
     
     [SerializeField]private GameObject[] meteors;
     public float spawnInterval=2f;
+    ObjectPooling pooling;
     
     private ScoreManager sm;
     void Start()
     {
         sm=FindObjectOfType<ScoreManager>();
+        pooling = FindObjectOfType<ObjectPooling>();
     }
     void Update()
     {
@@ -37,7 +39,39 @@ public class MeteorSpawner: MonoBehaviour
         y=Random.Range(1,meteors.Length-1);
         else
         y=meteors.Length-1;
-        Instantiate(meteors[y],x, Quaternion.identity);
+        
+        switch(y)
+        {
+            case 2:
+                GameObject go = pooling.getPooledMetoroid3();
+                if (go != null)
+                {
+                    go.transform.position = x;
+                    go.SetActive(true);
+                }
+                break;
+            case 1:
+                GameObject go1 = pooling.getPooledMetoroid2();
+                if (go1 != null)
+                {
+                    go1.transform.position = x;
+                    go1.SetActive(true);
+                }
+
+                break;
+            case 0:
+
+                GameObject go2 = pooling.getPooledMetoroid1();
+                if (go2 != null)
+                {
+                    go2.transform.position = x;
+                    go2.SetActive(true);
+                }
+               
+                break;
+        }
+        //Instantiate(meteors[y],x, Quaternion.identity);
+
         isSpawned=true;
     }
     // GameObject ProbabilityDecider()

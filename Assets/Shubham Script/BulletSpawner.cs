@@ -5,25 +5,53 @@ using UnityEngine;
 public class BulletSpawner : MonoBehaviour
 {
     [SerializeField] float speedOfBullet, noOfBullet;
-    public GameObject bullet;
+    public int bulletType;
+    ObjectPooling pooling;
+    Shooting shoot;
     bool a=true;
     // Update is called once per frame
+
+    private void Start()
+    {
+        shoot = FindObjectOfType<Shooting>();
+        pooling = FindObjectOfType<ObjectPooling>();
+    }
     void Update()
     {
-        if(a)
+        if(a & shoot.buttonPressed)
         {
-            StartCoroutine(Spawn(speedOfBullet));
             a = false;
+            StartCoroutine(Spawn(speedOfBullet));
         }
     }
     
     IEnumerator Spawn(float t)
     {
-        yield return new WaitForSeconds(t);
-        GameObject go= Instantiate(bullet, transform);
-        go.transform.parent = null;
-        Destroy(go, noOfBullet * speedOfBullet*2);
-        a = true;
+        GameObject go= null;
+        switch (bulletType)
+        {
+            case 2:
+                go = pooling.getPooledBullet3();
+                break;
+            case 1:
+                go = pooling.getPooledBullet2();
+                break;
+            case 0:
+                go = pooling.getPooledBullet1();
+                break;
+               
+        }
+        //get coonpolent of object pooling 
+       
+        if(go!=null)
+        {
+            go.transform.position = transform.position;
+            go.transform.rotation = transform.rotation;
+            go.SetActive(true);
+            yield return new WaitForSeconds(t);
+            a = true;
+        }
+        yield return new WaitForSeconds(noOfBullet * speedOfBullet);
     }
 
 }

@@ -1,28 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Shooting : MonoBehaviour
+using UnityEngine.EventSystems;
+public class Shooting : MonoBehaviour,IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private PlayerMovement player;
-    private void Start()
+    public bool buttonPressed;
+   
+    public void OnPointerDown(PointerEventData eventdata)
     {
-        player = GameObject.Find("player").GetComponent<PlayerMovement>();
+        buttonPressed = true;
     }
-    private void OnMouseDown()
+
+    public void OnPointerUp(PointerEventData eventData)
     {
-        player.shoot(0);
+        buttonPressed = false;
     }
-    private void OnMouseUp()
-    {
-        for(int i=0; i < player.gameObject.transform.childCount;i++)
-        {
-            player.gameObject.transform.GetChild(i).gameObject.SetActive(false);
-        }
-      
-    }
-    public void shhhhhooot()
-    {
-        player.shoot(0);
-    }    
 }
