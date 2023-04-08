@@ -13,5 +13,6 @@ public class bullet : MonoBehaviour
     void setActiveFalse()
     {
         gameObject.SetActive(false);
+        
     }
 }

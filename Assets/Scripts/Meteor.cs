@@ -72,7 +72,8 @@ public class Meteor: MonoBehaviour
     }
     void DestroyMeteor()
     {
-        Instantiate(destroyAnim, this.transform.position, Quaternion.identity);
+        GameObject gb=Instantiate(destroyAnim, this.transform.position, Quaternion.identity);
+        Destroy(gb,2f);
         //soundPlay
         gameObject.SetActive(false);
         //Destroy(this.gameObject);

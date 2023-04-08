@@ -34,12 +34,12 @@ public class ScoreManager: MonoBehaviour
         DistTravelled+=0.05f;
         dt=DistTravelled;
         
-        SpawnAbilities();
-        //text.text=score.ToString();
+        text.text=score.ToString();
         Difficulty();
         if(score%coinThreshold==0 && score!=0 && CoinAdded){
         CoinAdded=false;
         StartCoroutine(dealy());
+        StartCoroutine(SpawnAbilities());
         }
         
       }
@@ -63,12 +63,12 @@ public class ScoreManager: MonoBehaviour
         ms.spawnInterval=3f;
         }
       }
-      void SpawnAbilities()
+      IEnumerator SpawnAbilities()
       {
+        yield return new WaitForSeconds(3f);
         Vector3 x1=Camera.main.ViewportToWorldPoint(new Vector3(0,1,0));
         Vector3 x2=Camera.main.ViewportToWorldPoint(new Vector3(1,1,0));
-        if(dt%100==0)
-        Instantiate(abilitiesIcon[Random.Range(0,abilitiesIcon.Length-1)],new Vector3(Random.Range(x1.x,x2.x),5.08f), Quaternion.identity);
+        Instantiate(abilitiesIcon[Random.Range(0,abilitiesIcon.Length-1)],new Vector3(Random.Range(x1.x,x2.x),5.08f,0f), Quaternion.identity);
       }
       }
 
