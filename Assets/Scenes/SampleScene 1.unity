@@ -992,7 +992,10 @@ MonoBehaviour:
   text: {fileID: 0}
   spawner1: {fileID: 1370636678}
   spawner2: {fileID: 2050138035}
-  abilitiesIcon: []
+  abilitiesIcon:
+  - {fileID: 7229497204155014416, guid: eed03cb962fdb464eb4165efa82d0a28, type: 3}
+  - {fileID: 8691349318923015847, guid: b55f5019cb2235e47840331b32ce9866, type: 3}
+  - {fileID: 5036879909110386012, guid: 8eec6cf7934114949871aa7765fd7a52, type: 3}
   coins: 0
   coinThreshold: 100
   score: 0
@@ -1936,7 +1939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1337428048
 Transform:
   m_ObjectHideFlags: 0
