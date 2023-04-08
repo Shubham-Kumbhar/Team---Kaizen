@@ -10,7 +10,7 @@ public class Meteor: MonoBehaviour
     private GameObject player;
     public float damage;
     public float probability;
-    private float health=1f;
+    public float health=1f;
     private ScoreManager scoreManager;
 
 
@@ -79,6 +79,6 @@ public class Meteor: MonoBehaviour
             case "Big": scoreManager.score+=20f; break;
             default: break;
         }
-        
-    }
+        
+    }
 }
