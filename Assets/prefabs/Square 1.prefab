@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.0075
+  deadHeart: {fileID: 0}
   damage: 0
   probability: 0
 --- !u!61 &7955524264859930151

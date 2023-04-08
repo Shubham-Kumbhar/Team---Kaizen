@@ -37,9 +37,8 @@ public class MeteorSpawner: MonoBehaviour
         y=Random.Range(0,meteors.Length-1);
         else if(sm.DistTravelled<=350)
         y=Random.Range(1,meteors.Length-1);
-        else
-        y=meteors.Length-1;
-        
+
+
         switch(y)
         {
             case 2:
