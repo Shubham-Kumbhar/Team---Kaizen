@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] int typeOFWepon;
+    public int typeOFWepon;
     [SerializeField] float speedX,yPos;
     [SerializeField] Slider joyStick;
     public bool a= true;
