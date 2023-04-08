@@ -21,7 +21,7 @@ public class Meteor: MonoBehaviour
         scoreManager=FindObjectOfType<ScoreManager>();
         player=GameObject.FindWithTag("Player");
         Classify();
-        Invoke("DestroyMeteor", 5f);
+        //Invoke("DestroyMeteor", 5f);
         //Destroy(this.gameObject,7f);
         
     }
@@ -49,19 +49,20 @@ public class Meteor: MonoBehaviour
             default: break;
         }
     }
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("bullet"))
         {
             health--;
             other.gameObject.SetActive(false);
         }
-        if(other.gameObject.CompareTag("Player")){
+        if(other.gameObject.CompareTag("Player"))
+        {
         gameObject.SetActive(false);
-
         other.gameObject.GetComponent<PlayerHealth>().noOfLives--;
         other.gameObject.GetComponent<PlayerHealth>().liveHearts[other.gameObject.GetComponent<PlayerHealth>().noOfLives].GetComponent<SpriteRenderer>().sprite=deadHeart;
-    }}
+        }
+    }
     void DestroyMeteor()
     {
         //animPlay
@@ -80,11 +81,4 @@ public class Meteor: MonoBehaviour
         }
         
     }
-    // void DodgeMeteor()
-    // {
-    //     if(this.transform.position.y<=player.transform.position.y){
-        
-    //     return;
-    // }}
-    
 }
