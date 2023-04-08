@@ -10,6 +10,9 @@ public class ScoreManager: MonoBehaviour
     [SerializeField]private GameObject spawner2;
     [SerializeField]private GameObject[] abilitiesIcon;
     public int coins=0;
+    public int NoOfBulletsFired=0;
+    public int NukeThreshold=16;
+    public bool CoinAdded=true;
     public int coinThreshold=100;
     public float score=0;
     public float DistTravelled=0f;
@@ -22,8 +25,8 @@ public class ScoreManager: MonoBehaviour
       void Start()
       {
         ms=FindObjectOfType<MeteorSpawner>();
-        if (PlayerPrefs.HasKey("Coins"))
-        coins=PlayerPrefs.GetInt("Coins");
+        // if (PlayerPrefs.HasKey("Coins"))
+        // coins=PlayerPrefs.GetInt("Coins");
       }
       void Update()
       {
@@ -34,9 +37,18 @@ public class ScoreManager: MonoBehaviour
         SpawnAbilities();
         //text.text=score.ToString();
         Difficulty();
-        if(score%coinThreshold==0)
-        coins++;      
+        if(score%coinThreshold==0 && score!=0 && CoinAdded){
+        CoinAdded=false;
+        StartCoroutine(dealy());
+        }
         
+      }
+
+      IEnumerator dealy()
+      {
+        coins++;
+        yield return new WaitForSeconds(3f);
+        CoinAdded = true;
       }
       void Difficulty()
       {

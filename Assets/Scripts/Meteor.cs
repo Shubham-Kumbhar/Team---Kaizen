@@ -50,7 +50,7 @@ public class Meteor: MonoBehaviour
     {
         switch(tag)
         {
-            case "Small": damage=10f; health=1f;probability=0.5f; break;
+            case "meteriod": damage=10f; health=1f;probability=0.5f; break;
             case "Mid": damage=20f; health=1f;probability=0.4f; break;
             case "Big": damage=30f; health=3f;probability=0.1f;break;
             default: break;
@@ -81,7 +81,7 @@ public class Meteor: MonoBehaviour
     {
         switch(tag)
         {
-            case "Small": scoreManager.score+=10f; break;
+            case "meteriod": scoreManager.score+=10f; break;
             case "Mid": scoreManager.score+=10f; break;
             case "Big": scoreManager.score+=20f; break;
             default: break;
