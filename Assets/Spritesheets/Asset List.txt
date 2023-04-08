@@ -1,0 +1,11 @@
+Asset List:
+
+small, med, large Meteors with 3 states for large
+Spaceship (fire animation)
+Shoot button
+Die animation
+meteor destroy animation
+shield
+lasers
+background
+Boss level (After everything)

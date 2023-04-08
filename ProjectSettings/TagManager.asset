@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - bullet
+  - meteriod
+  - Big
+  - Mid
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3363808381
+    locked: 0
+  - name: D_Pink
+    uniqueID: 2838612769
+    locked: 0
+  - name: Purple
+    uniqueID: 263881985
+    locked: 0
+  - name: Planet_1
+    uniqueID: 2599344655
+    locked: 0
+  - name: Magenta
+    uniqueID: 2447049231
+    locked: 0
+  - name: Planet_2
+    uniqueID: 1655980419
+    locked: 0
+  - name: Planet_3
+    uniqueID: 3741797003
+    locked: 0
+  - name: DarkCloud
+    uniqueID: 632991397
+    locked: 0
+  - name: Stars
+    uniqueID: 3530595589
+    locked: 0
+  - name: Planet_4
+    uniqueID: 2331183457
+    locked: 0
+  - name: IN-GAME ELEMENTS
+    uniqueID: 1394767351
+    locked: 0
+  - name: Abilities
+    uniqueID: 3846938683
+    locked: 0
