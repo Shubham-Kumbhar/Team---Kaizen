@@ -7,15 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] int typeOFWepon;
     [SerializeField] float speedX,yPos;
     [SerializeField] Slider joyStick;
-    public bool a;
+    public bool a= true;
     // Update is called once per frame
     void Update()
     {
         transform.position = new Vector2(joyStick.value*speedX, yPos);
-        if(a)
-        {
-            activateWepons(typeOFWepon);
-        }
+        activateWepons(typeOFWepon);
 
     }
 

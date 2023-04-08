@@ -51,12 +51,13 @@ public class Meteor: MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("bullet")){
-        health--;
-        Destroy(other.gameObject);}
+        if (other.gameObject.CompareTag("bullet"))
+        {
+            health--;
+            other.gameObject.SetActive(false);
+        }
         if(other.gameObject.CompareTag("Player")){
         gameObject.SetActive(false);
-       // Destroy(this);
 
         other.gameObject.GetComponent<PlayerHealth>().noOfLives--;
         other.gameObject.GetComponent<PlayerHealth>().liveHearts[other.gameObject.GetComponent<PlayerHealth>().noOfLives].GetComponent<SpriteRenderer>().sprite=deadHeart;
