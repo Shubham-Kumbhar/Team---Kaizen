@@ -8,11 +8,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speedX,yPos;
     [SerializeField] Slider joyStick;
     public bool a= true;
+    [SerializeField] int abilityTimer= 10;
     // Update is called once per frame
+    public bool acilityActivated= false;
     void Update()
     {
         transform.position = new Vector2(joyStick.value*speedX, yPos);
         activateWepons(typeOFWepon);
+        if(acilityActivated)
+        {
+            StartCoroutine(resetAbility());
+        }
 
     }
 
@@ -44,5 +50,11 @@ public class PlayerMovement : MonoBehaviour
                 transform.GetChild(i).gameObject.SetActive(false);
             }
         }
+    }
+    IEnumerator resetAbility()
+    {
+        acilityActivated = false;
+        yield return new WaitForSeconds(abilityTimer);
+        activateWepons(0);
     }
 }

@@ -14,6 +14,9 @@ public class Meteor: MonoBehaviour
     public float health=1f;
     private ScoreManager scoreManager;
 
+    [SerializeField] private AudioSource aud;
+    [SerializeField] private AudioClip clip;
+
 
     private void OnEnable()
     {
@@ -24,6 +27,7 @@ public class Meteor: MonoBehaviour
     }
     void Start()
     {
+        aud = GameObject.Find("audio").transform.GetChild(0).GetComponent<AudioSource>();
         tag =this.gameObject.tag;    
         scoreManager=FindObjectOfType<ScoreManager>();
         player=GameObject.FindWithTag("Player");
@@ -72,8 +76,13 @@ public class Meteor: MonoBehaviour
     }
     void DestroyMeteor()
     {
+<<<<<<< Updated upstream
         GameObject gb=Instantiate(destroyAnim, this.transform.position, Quaternion.identity);
         Destroy(gb,2f);
+=======
+        Instantiate(destroyAnim, this.transform.position, Quaternion.identity);
+        aud.PlayOneShot(clip);
+>>>>>>> Stashed changes
         //soundPlay
         gameObject.SetActive(false);
         //Destroy(this.gameObject);

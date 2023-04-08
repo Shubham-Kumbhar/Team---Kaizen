@@ -11,6 +11,7 @@ public class Abilities : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerMovement>().typeOFWepon = abilityType;
+            collision.GetComponent<PlayerMovement>().acilityActivated = true;
             Destroy(gameObject);
         }
     }

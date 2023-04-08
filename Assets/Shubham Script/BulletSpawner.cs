@@ -11,6 +11,9 @@ public class BulletSpawner : MonoBehaviour
     bool a=true;
     // Update is called once per frame
 
+    [SerializeField] private AudioSource aud;
+    [SerializeField] private AudioClip clip;
+
     private void Start()
     {
         shoot = FindObjectOfType<Shooting>();
@@ -21,7 +24,9 @@ public class BulletSpawner : MonoBehaviour
         if(a & shoot.buttonPressed)
         {
             a = false;
+            aud.PlayOneShot(clip);
             StartCoroutine(Spawn(speedOfBullet));
+            
         }
     }
     

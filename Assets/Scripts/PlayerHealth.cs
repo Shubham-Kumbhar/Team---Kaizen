@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     public int noOfLives=3; 
     public GameObject[] liveHearts;
     public GameObject destroyShipAnim;
+
+    [SerializeField] private AudioSource aud;
+    [SerializeField] private AudioClip clip;
     // Update is called once per frame
     void Update()
     {
@@ -15,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
         {
             this.gameObject.SetActive(false);
             Instantiate(destroyShipAnim, this.transform.position, Quaternion.identity);
-
+            aud.PlayOneShot(clip);
             Time.timeScale = 0;
             SceneManager.LoadScene("GameOver");
         } 

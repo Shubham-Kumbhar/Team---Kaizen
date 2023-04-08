@@ -17,7 +17,7 @@ public class ScoreManager: MonoBehaviour
     public float score=0;
     public float DistTravelled=0f;
     private Meteor meteor;
-    
+
     private MeteorSpawner ms;
     private float dt;
     
