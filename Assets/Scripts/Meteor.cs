@@ -6,6 +6,7 @@ public class Meteor: MonoBehaviour
 {
     private string tag;
     [SerializeField]private float speed;
+    [SerializeField]private Sprite deadHeart;
     private GameObject player;
     public float damage;
     public float probability;
@@ -20,8 +21,17 @@ public class Meteor: MonoBehaviour
         scoreManager=FindObjectOfType<ScoreManager>();
         player=GameObject.FindWithTag("Player");
         Classify();
+<<<<<<< Updated upstream
         Invoke("DestroyMeteor", 5f);
         //Destroy(this.gameObject,7f);
+=======
+        Destroy(this.gameObject,7f);
+        Invoke("DodgeScoreIncrease",4f);
+    }
+    void DodgeScoreIncrease()
+    {
+        scoreManager.score+=5f;
+>>>>>>> Stashed changes
     }
     void Update()
     {
@@ -49,16 +59,19 @@ public class Meteor: MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("bullet"))
+        if(other.gameObject.CompareTag("bullet")){
         health--;
+        Destroy(other.gameObject);}
         if(other.gameObject.CompareTag("Player")){
+<<<<<<< Updated upstream
         gameObject.SetActive(false);
        // Destroy(this);
+=======
+        Destroy(this.gameObject);
+>>>>>>> Stashed changes
         other.gameObject.GetComponent<PlayerHealth>().noOfLives--;
-        other.gameObject.GetComponent<PlayerHealth>().liveHearts[other.gameObject.GetComponent<PlayerHealth>().noOfLives-1].SetActive(false);
-        }
-        //Debug.Log("SJDAI");
-    }
+        other.gameObject.GetComponent<PlayerHealth>().liveHearts[other.gameObject.GetComponent<PlayerHealth>().noOfLives].GetComponent<SpriteRenderer>().sprite=deadHeart;
+    }}
     void DestroyMeteor()
     {
         //animPlay
@@ -75,12 +88,13 @@ public class Meteor: MonoBehaviour
             case "Big": scoreManager.score+=20f; break;
             default: break;
         }
-        scoreManager.score+=69f;
+        
     }
-    void DodgeMeteor()
-    {
-        if(this.transform.position.y<=player.transform.position.y)
-        scoreManager.score+=5f;
-    }
-
+    // void DodgeMeteor()
+    // {
+    //     if(this.transform.position.y<=player.transform.position.y){
+        
+    //     return;
+    // }}
+    
 }
