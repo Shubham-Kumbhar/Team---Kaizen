@@ -21,17 +21,9 @@ public class Meteor: MonoBehaviour
         scoreManager=FindObjectOfType<ScoreManager>();
         player=GameObject.FindWithTag("Player");
         Classify();
-<<<<<<< Updated upstream
         Invoke("DestroyMeteor", 5f);
         //Destroy(this.gameObject,7f);
-=======
-        Destroy(this.gameObject,7f);
-        Invoke("DodgeScoreIncrease",4f);
-    }
-    void DodgeScoreIncrease()
-    {
-        scoreManager.score+=5f;
->>>>>>> Stashed changes
+        
     }
     void Update()
     {
@@ -63,12 +55,9 @@ public class Meteor: MonoBehaviour
         health--;
         Destroy(other.gameObject);}
         if(other.gameObject.CompareTag("Player")){
-<<<<<<< Updated upstream
         gameObject.SetActive(false);
        // Destroy(this);
-=======
-        Destroy(this.gameObject);
->>>>>>> Stashed changes
+
         other.gameObject.GetComponent<PlayerHealth>().noOfLives--;
         other.gameObject.GetComponent<PlayerHealth>().liveHearts[other.gameObject.GetComponent<PlayerHealth>().noOfLives].GetComponent<SpriteRenderer>().sprite=deadHeart;
     }}
