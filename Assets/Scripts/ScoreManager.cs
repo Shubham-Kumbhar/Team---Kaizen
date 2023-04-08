@@ -9,7 +9,9 @@ public class ScoreManager: MonoBehaviour
     [SerializeField]private GameObject spawner1;
     [SerializeField]private GameObject spawner2;
     [SerializeField]private GameObject[] abilitiesIcon;
-    public float score;
+    public int coins=0;
+    public int coinThreshold=100;
+    public float score=0;
     public float DistTravelled=0f;
     private Meteor meteor;
     
@@ -20,14 +22,20 @@ public class ScoreManager: MonoBehaviour
       void Start()
       {
         ms=FindObjectOfType<MeteorSpawner>();
+        if (PlayerPrefs.HasKey("Coins"))
+        coins=PlayerPrefs.GetInt("Coins");
       }
       void Update()
       {
+        PlayerPrefs.SetInt("Coins",coins);
         DistTravelled+=0.05f;
         dt=DistTravelled;
+        
         SpawnAbilities();
         //text.text=score.ToString();
-        Difficulty();       
+        Difficulty();
+        if(score%coinThreshold==0)
+        coins++;      
         
       }
       void Difficulty()
