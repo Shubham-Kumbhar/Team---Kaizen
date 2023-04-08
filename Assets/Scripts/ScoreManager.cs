@@ -40,15 +40,15 @@ public class ScoreManager: MonoBehaviour
       }
       void Difficulty()
       {
-        if(DistTravelled>=100 && DistTravelled<=200)
+        if(DistTravelled>=500 && DistTravelled<=200)
         ms.spawnInterval=1.75f;
         
-        if(DistTravelled>200 && DistTravelled<=300){
+        if(DistTravelled>750 && DistTravelled<=1000){
         spawner1.SetActive(true);
         ms.spawnInterval=1.5f;}
-        if(DistTravelled>300){
+        if(DistTravelled>1000){
         spawner2.SetActive(true);
-        ms.spawnInterval=1.25f;
+        ms.spawnInterval=3f;
         }
       }
       void SpawnAbilities()

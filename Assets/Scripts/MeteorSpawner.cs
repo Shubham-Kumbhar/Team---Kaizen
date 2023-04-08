@@ -30,12 +30,12 @@ public class MeteorSpawner: MonoBehaviour
         Vector3 x1=Camera.main.ViewportToWorldPoint(new Vector3(0,1,0));
         Vector3 x2=Camera.main.ViewportToWorldPoint(new Vector3(1,1,0));
         int y=0;
-        Vector3 x=new Vector3(Random.Range(x1.x,x2.x),5.08f,0);
-        if(sm.DistTravelled<=100)
+        Vector3 x = new Vector3(Random.Range(x1.x,x2.x),5.08f,0);
+        if(sm.DistTravelled<=500)
         y=Random.Range(0,meteors.Length-2);
-        else if(sm.DistTravelled<=200)
+        else if(sm.DistTravelled<=750)
         y=Random.Range(0,meteors.Length-1);
-        else if(sm.DistTravelled<=350)
+        else if(sm.DistTravelled<=1000)
         y=Random.Range(1,meteors.Length-1);
 
 
@@ -59,7 +59,6 @@ public class MeteorSpawner: MonoBehaviour
 
                 break;
             case 0:
-
                 GameObject go2 = pooling.getPooledMetoroid1();
                 if (go2 != null)
                 {
@@ -69,8 +68,6 @@ public class MeteorSpawner: MonoBehaviour
                
                 break;
         }
-        //Instantiate(meteors[y],x, Quaternion.identity);
-
         isSpawned=true;
     }
     // GameObject ProbabilityDecider()

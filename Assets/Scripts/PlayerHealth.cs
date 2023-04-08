@@ -10,8 +10,12 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(noOfLives==0)
-        SceneManager.LoadScene("GameOver");
+        if (noOfLives == 0)
+        {
+            Time.timeScale = 0;
+            SceneManager.LoadScene("GameOver");
+        } 
+       
     }
 }
 

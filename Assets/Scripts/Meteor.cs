@@ -14,10 +14,13 @@ public class Meteor: MonoBehaviour
     private ScoreManager scoreManager;
 
 
+    private void OnEnable()
+    {
+        health = 1f;
+    }
     void Start()
     {
-
-        tag=this.gameObject.tag;    
+        tag =this.gameObject.tag;    
         scoreManager=FindObjectOfType<ScoreManager>();
         player=GameObject.FindWithTag("Player");
         Classify();
