@@ -29,4 +29,4 @@ Contrary to popular belief, meteor crush has quite an expandable scope, with ele
 There is scope for multiplayer as well, as 2 players can go head to head in a race to score the highest, or even have a head to head battle wherein they have to take each other down.
 
 
-Youtube Link of gameplay -
+Youtube Link of gameplay - https://youtu.be/JjamI7Z3B0s
