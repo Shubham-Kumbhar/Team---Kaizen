@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5847147708870946440}
   m_Layer: 0
   m_Name: Meterite_small
-  m_TagString: Untagged
+  m_TagString: meteriod
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 1394767351
   m_SortingLayer: 11
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4cc23f766088b1a4498ef2e109873a5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef8f2547f31f5e249a78ddb18e67417e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

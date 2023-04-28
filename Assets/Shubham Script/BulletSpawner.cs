@@ -23,6 +23,7 @@ public class BulletSpawner : MonoBehaviour
     {
         if(a & shoot.buttonPressed)
         {
+            if(aud!= null)
             aud.PlayOneShot(clip);
             a = false;
             StartCoroutine(Spawn(speedOfBullet));

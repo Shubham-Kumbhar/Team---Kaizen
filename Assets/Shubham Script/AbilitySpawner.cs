@@ -6,20 +6,28 @@ public class AbilitySpawner : MonoBehaviour
 {
 
     public GameObject[] powerups;
-    public float checker;
+    public float MinTimeToSpawn;
     // Update is called once per frame
-    void Update()
+    private void Start()
+    {
+        StartCoroutine(powerupSpawner());
+    }
+    IEnumerator powerupSpawner()
+    {
+        float a =MinTimeToSpawn* Random.RandomRange(3, 6);
+        yield return new WaitForSeconds(a);
+        Instantiate(powerups[Random.Range(0, 3)], gameObject.transform.position, Quaternion.identity);
+        StartCoroutine(powerupSpawner());
+       
+    }
+   /* void Update()
     {
 
-        checker += Time.deltaTime;
-        if(checker >= 10)
+        MinTimeToSpawn += Time.deltaTime;
+        if(MinTimeToSpawn >= 10)
         {
-            spawnPowerup();
-            checker = 0;
+            //spawnPowerup();
+            MinTimeToSpawn = 0;
         }
-    }
-    void spawnPowerup()
-    {
-        Instantiate(powerups[Random.Range(0,3)],gameObject.transform.position, Quaternion.identity);
-    }
+    }*/
 }

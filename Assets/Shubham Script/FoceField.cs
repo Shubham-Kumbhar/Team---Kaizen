@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class FoceField : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("meteriod"))
+        if (collision.CompareTag("meteriod")|| collision.CompareTag("Big"))
         {
-            collision.gameObject.SetActive(false);
+            collision.gameObject.GetComponent<Meteor>().DestroyMeteor();
         }
        
     }

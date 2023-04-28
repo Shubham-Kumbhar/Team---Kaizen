@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int noOfLives=3; 
+    public int noOfLives = 3;
     public GameObject[] liveHearts;
     public GameObject destroyShipAnim;
     [SerializeField] private AudioSource aud;
-    [SerializeField] private AudioClip clip;
-     void Start() {
+    [SerializeField] private AudioClip clip;
+    void Start()
+    {
         {
             aud = GameObject.Find("audio").transform.GetChild(0).GetComponent<AudioSource>();
         }
@@ -20,14 +21,18 @@ public class PlayerHealth : MonoBehaviour
     {
         if (noOfLives == 0)
         {
-            this.gameObject.SetActive(false);
-            Instantiate(destroyShipAnim, this.transform.position, Quaternion.identity);
+            StartCoroutine(destroyShip());
+        }
 
-            Time.timeScale = 0;
-            aud.PlayOneShot(clip);
-            SceneManager.LoadScene("GameOver");
-        } 
-       
+    }
+
+    IEnumerator destroyShip()
+    {
+        this.gameObject.SetActive(false);
+        Instantiate(destroyShipAnim, this.transform.position, Quaternion.identity);
+        aud.PlayOneShot(clip);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(3);
     }
 }
 

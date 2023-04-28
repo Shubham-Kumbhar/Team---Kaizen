@@ -73,7 +73,7 @@ public class Meteor: MonoBehaviour
         other.gameObject.GetComponent<PlayerHealth>().liveHearts[other.gameObject.GetComponent<PlayerHealth>().noOfLives].GetComponent<SpriteRenderer>().sprite=deadHeart;
         }
     }
-    void DestroyMeteor()
+    public void DestroyMeteor()
     {
         GameObject gb=Instantiate(destroyAnim, this.transform.position, Quaternion.identity);
         Destroy(gb,2f);
