@@ -9,25 +9,28 @@ public class ShopIcon : MonoBehaviour
     [SerializeField]private Text text;
     public int PriceItem;
     private float coins;
-    private bool IsPurchased=false;
+    public bool IsPurchased=false;
     public Sprite buyingSprite;
     private ShopManager shopManager;
-    [SerializeField]private GameObject player;
+    private GameObject player;
     void Start()
     {
         shopManager=GetComponent<ShopManager>();
         coins=shopManager.coins;
+        player=GameObject.FindWithTag("Player");
+        
+    }
+    void Update()
+    {
+        if(!IsPurchased)
+        text.text=PriceItem.ToString();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        text.text=PriceItem.ToString();
-
-    }
+   
     public void OnClick()
     {
-        if(PriceItem>=coins)
+        if(PriceItem<=coins && !IsPurchased)
         {
             FindObjectOfType<ShopManager>().coins-=PriceItem;
             player.GetComponent<SpriteRenderer>().sprite=buyingSprite;

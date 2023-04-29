@@ -129,6 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedOfBullet: 0.4
   noOfBullet: 10
+  aud: {fileID: 0}
+  clip: {fileID: 0}
   bulletType: 0
 --- !u!1 &4363798387059728506
 GameObject:
@@ -211,6 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedOfBullet: 0.2
   noOfBullet: 10
+  aud: {fileID: 0}
+  clip: {fileID: 0}
   bulletType: 2
 --- !u!1 &4363798387279215624
 GameObject:
@@ -258,6 +262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedOfBullet: 0.4
   noOfBullet: 10
+  aud: {fileID: 0}
+  clip: {fileID: 0}
   bulletType: 1
 --- !u!1 &4363798387724417156
 GameObject:
@@ -305,6 +311,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedOfBullet: 0.4
   noOfBullet: 10
+  aud: {fileID: 0}
+  clip: {fileID: 0}
   bulletType: 1
 --- !u!1 &4363798387726582800
 GameObject:
@@ -391,7 +399,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -414,6 +422,8 @@ MonoBehaviour:
   yPos: -2.2
   joyStick: {fileID: 0}
   a: 1
+  abilitytimer: 0
+  abilityActivte: 0
 --- !u!95 &4363798387726582805
 Animator:
   serializedVersion: 5
@@ -451,6 +461,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  destroyShipAnim: {fileID: 0}
+  aud: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &4363798387882817458
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +510,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedOfBullet: 0.4
   noOfBullet: 10
+  aud: {fileID: 0}
+  clip: {fileID: 0}
   bulletType: 0
 --- !u!1 &4363798388034228207
 GameObject:
@@ -576,4 +591,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedOfBullet: 0.4
   noOfBullet: 10
+  aud: {fileID: 0}
+  clip: {fileID: 0}
   bulletType: 0
