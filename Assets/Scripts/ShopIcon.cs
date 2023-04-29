@@ -12,12 +12,12 @@ public class ShopIcon : MonoBehaviour
     public bool IsPurchased=false;
     public Sprite buyingSprite;
     private ShopManager shopManager;
-    private GameObject player;
+    [SerializeField]private GameObject player;
     void Start()
     {
         shopManager=GetComponent<ShopManager>();
         coins=shopManager.coins;
-        player=GameObject.FindWithTag("Player");
+        //player=GameObject.FindWithTag("Player");
         
     }
     void Update()
@@ -30,17 +30,18 @@ public class ShopIcon : MonoBehaviour
    
     public void OnClick()
     {
-        if(PriceItem<=coins && !IsPurchased)
-        {
-            FindObjectOfType<ShopManager>().coins-=PriceItem;
-            player.GetComponent<SpriteRenderer>().sprite=buyingSprite;
-            text.text="Owned";
-            IsPurchased=true;
-        }
         if(IsPurchased)
         {
             player.GetComponent<SpriteRenderer>().sprite=buyingSprite;
             text.text="Equiped";
         }
+        if(PriceItem<=coins && !IsPurchased)
+        {
+            FindObjectOfType<ShopManager>().coins-=PriceItem;
+            //player.GetComponent<SpriteRenderer>().sprite=buyingSprite;
+            text.text="Owned";
+            IsPurchased=true;
+        }
+        
     }
 }
