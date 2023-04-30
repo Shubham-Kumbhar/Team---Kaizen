@@ -7,6 +7,7 @@ public class ScoreManager: MonoBehaviour
 {
     [SerializeField]private Text text;
     [SerializeField]private GameObject spawner1;
+    [SerializeField]private GameObject PlayerPrefab;
     [SerializeField]private GameObject spawner2;
     [SerializeField]private GameObject[] abilitiesIcon;
     public int coins=0;
@@ -29,8 +30,10 @@ public class ScoreManager: MonoBehaviour
 
         x1=Camera.main.ViewportToWorldPoint(new Vector3(0,1,0));
         x2=Camera.main.ViewportToWorldPoint(new Vector3(1,1,0));
-        // if (PlayerPrefs.HasKey("Coins"))
-        // coins=PlayerPrefs.GetInt("Coins");
+        GameObject go=Instantiate(PlayerPrefab,new Vector3(0,-2.04f,0),Quaternion.identity);
+        go.GetComponent<PlayerMovement>().joyStick=FindObjectOfType<Slider>();
+        if (PlayerPrefs.HasKey("Coins"))
+        coins=PlayerPrefs.GetInt("Coins");
       }
       void Update()
       {

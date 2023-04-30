@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public int typeOFWepon;
     [SerializeField] float speedX,yPos;
-    [SerializeField] Slider joyStick;
+    public Slider joyStick;
     public bool a= true;
     public float abilitytimer;
 

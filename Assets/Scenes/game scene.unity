@@ -800,7 +800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &596149635
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1063,6 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1012301512}
   spawner1: {fileID: 1370636678}
+  PlayerPrefab: {fileID: 4363798387726582800, guid: e004f4f42710f474e83b57f3711853ad, type: 3}
   spawner2: {fileID: 2050138035}
   abilitiesIcon:
   - {fileID: 7229497204155014416, guid: eed03cb962fdb464eb4165efa82d0a28, type: 3}
