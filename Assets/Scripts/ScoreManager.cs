@@ -32,6 +32,10 @@ public class ScoreManager: MonoBehaviour
         x2=Camera.main.ViewportToWorldPoint(new Vector3(1,1,0));
         GameObject go=Instantiate(PlayerPrefab,new Vector3(0,-2.04f,0),Quaternion.identity);
         go.GetComponent<PlayerMovement>().joyStick=FindObjectOfType<Slider>();
+        for(int i=0;i<3;i++)
+        {
+          go.GetComponent<PlayerHealth>().liveHearts[i]=GameObject.FindGameObjectsWithTag("Heart")[i];
+        }
         if (PlayerPrefs.HasKey("Coins"))
         coins=PlayerPrefs.GetInt("Coins");
       }

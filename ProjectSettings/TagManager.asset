@@ -8,6 +8,7 @@ TagManager:
   - meteriod
   - Big
   - Mid
+  - Heart
   layers:
   - Default
   - TransparentFX

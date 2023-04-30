@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Animations;
 using UnityEngine.UI;
 
 public class ShopIcon : MonoBehaviour
@@ -10,7 +11,9 @@ public class ShopIcon : MonoBehaviour
     public int PriceItem;
     private float coins;
     public bool IsPurchased=false;
+    public bool IsEquiped=false;
     public Sprite buyingSprite;
+    public RuntimeAnimatorController animCont;
     private ShopManager shopManager;
     [SerializeField]private GameObject player;
     void Start()
@@ -24,6 +27,8 @@ public class ShopIcon : MonoBehaviour
     {
         if(!IsPurchased)
         text.text=PriceItem.ToString();
+        else if(player.GetComponent<Animator>().runtimeAnimatorController!=animCont)
+        text.text="Owned";
     }
 
     // Update is called once per frame
@@ -33,7 +38,9 @@ public class ShopIcon : MonoBehaviour
         if(IsPurchased)
         {
             player.GetComponent<SpriteRenderer>().sprite=buyingSprite;
+            player.GetComponent<Animator>().runtimeAnimatorController=animCont;
             text.text="Equiped";
+            IsEquiped=true;
         }
         if(PriceItem<=coins && !IsPurchased)
         {
