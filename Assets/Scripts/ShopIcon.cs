@@ -20,6 +20,7 @@ public class ShopIcon : MonoBehaviour
     {
         shopManager=GetComponent<ShopManager>();
         coins=shopManager.coins;
+        IsPurchased=IntToBool(PlayerPrefs.GetInt("Purchased"));
         //player=GameObject.FindWithTag("Player");
         
     }
@@ -29,6 +30,7 @@ public class ShopIcon : MonoBehaviour
         text.text=PriceItem.ToString();
         else if(player.GetComponent<Animator>().runtimeAnimatorController!=animCont)
         text.text="Owned";
+        PlayerPrefs.SetInt("Purchased",BoolToInt(IsPurchased));
     }
 
     // Update is called once per frame
@@ -50,5 +52,19 @@ public class ShopIcon : MonoBehaviour
             IsPurchased=true;
         }
         
+    }
+    private int BoolToInt(bool b)
+    {
+        if(b)
+        return 1;
+        else
+        return 0;
+    }
+    private bool IntToBool(int x)
+    {
+        if(x==1)
+        return true;
+        else
+        return false;
     }
 }
