@@ -13,14 +13,19 @@ public class ShopIcon : MonoBehaviour
     public bool IsPurchased=false;
     public bool IsEquiped=false;
     public Sprite buyingSprite;
-    public RuntimeAnimatorController animCont;
+
+    public AnimatorOverrideController animCont;
     private ShopManager shopManager;
     [SerializeField]private GameObject player;
+    void Awake()
+    {
+        IsPurchased=IntToBool(PlayerPrefs.GetInt("Purchased"));
+    }
     void Start()
     {
         shopManager=GetComponent<ShopManager>();
         coins=shopManager.coins;
-        IsPurchased=IntToBool(PlayerPrefs.GetInt("Purchased"));
+       
         //player=GameObject.FindWithTag("Player");
         
     }
@@ -29,7 +34,7 @@ public class ShopIcon : MonoBehaviour
         
         if(!IsPurchased)
         text.text=PriceItem.ToString();
-        else if(player.GetComponent<Animator>().runtimeAnimatorController!=animCont)
+        else if(player.GetComponent<Animator>().runtimeAnimatorController!=animCont as RuntimeAnimatorController && IsPurchased)
         text.text="Owned";
         PlayerPrefs.SetInt("Purchased",BoolToInt(IsPurchased));
     }
@@ -40,8 +45,8 @@ public class ShopIcon : MonoBehaviour
     {
         if(IsPurchased)
         {
-            player.GetComponent<SpriteRenderer>().sprite=buyingSprite;
-            player.GetComponent<Animator>().runtimeAnimatorController=animCont;
+            //player.GetComponent<SpriteRenderer>().sprite=buyingSprite;
+            player.GetComponent<Animator>().runtimeAnimatorController=animCont as RuntimeAnimatorController;
             text.text="Equiped";
             IsEquiped=true;
         }
