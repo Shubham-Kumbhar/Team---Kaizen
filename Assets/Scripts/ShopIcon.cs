@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Animations;
+using UnityEditor;
 using UnityEngine.UI;
 
 public class ShopIcon : MonoBehaviour
@@ -26,6 +26,7 @@ public class ShopIcon : MonoBehaviour
     }
     void Update()
     {
+        
         if(!IsPurchased)
         text.text=PriceItem.ToString();
         else if(player.GetComponent<Animator>().runtimeAnimatorController!=animCont)
